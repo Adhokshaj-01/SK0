@@ -1,0 +1,123 @@
+import { Box, CloseButton, Heading, HStack, IconButton, Image, Text } from "@chakra-ui/react";
+import logo from "../utlis/logo.png";
+import { Typewriter } from "react-simple-typewriter";
+import { CiMenuFries } from "react-icons/ci";
+import { MouseParallax } from "react-just-parallax";
+import { useState } from "react";
+
+export default function Home({ aboutRef, networkRef, careersRef, contactRef }) {
+  const [right, Setright] = useState("-100%");
+
+  const menubtn = () => {
+    Setright("10");
+  };
+  const menubtn1 = () => {
+    Setright("-100%");
+  };
+
+  const scrollToSection = (sectionRef) => {
+    if (sectionRef?.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      Setright("-100%");
+    }
+  };
+
+  return (
+    <Box h={"100vh"} w={"100%"} fontFamily={"serif"} overflow={"hidden"}>
+      {/* Menu */}
+      <Box
+        h="fit-content"
+        w={{ base: "90%", md: "30%" }}
+        right={right}
+        top={6}
+        pos={"absolute"}
+        transition={"ease-in-out 0.5s"}
+        bg={"white"}
+        boxShadow={"1px 1px 5px 3px rgba(250,192,145,1);"}
+        zIndex={"100"}
+        borderRadius={"20px"}
+        alignContent={"center"}
+        p={6}
+      >
+        <HStack gap={2} textAlign={"center"} textTransform={"capitalize"} fontFamily={"monospace"} fontSize={"md"} color={"orange.500"}>
+          <Text onClick={() => scrollToSection(aboutRef)} cursor="pointer" _hover={{ textDecoration: "underline" }}>
+            ABOUT
+          </Text>
+          <Text onClick={() => scrollToSection(networkRef)} cursor="pointer" _hover={{ textDecoration: "underline" }}>
+            NETWORK
+          </Text>
+          <Text onClick={() => scrollToSection(careersRef)} cursor="pointer" _hover={{ textDecoration: "underline" }}>
+            CAREERS
+          </Text>
+          <Text onClick={() => scrollToSection(contactRef)} cursor="pointer" _hover={{ textDecoration: "underline" }}>
+            CONTACT
+          </Text>
+          <CloseButton onClick={menubtn1} position={"absolute"} right={5} color={"orange.400"} />
+        </HStack>
+      </Box>
+
+      {/* Navigation */}
+      <Box display={"flex"} alignItems="center" m={12} position="relative">
+        <Image src={logo} p={3} boxSize={"100px"} boxShadow={"inset 1px 1px 2px 1px #f7c088"} borderRadius={"50%"} />
+
+        <IconButton
+          icon={<CiMenuFries />}
+          variant={"ghost"}
+          colorScheme="orange"
+          position="absolute"
+          right={0}
+          top={0}
+          m={3}
+          fontSize={"2xl"}
+          onClick={menubtn}
+        />
+      </Box>
+
+      {/* Hero Section Content */}
+      <Box p={14} pos={"relative"} zIndex={"10"} /* Ensures text appears in front of the circle */>
+        <Heading fontSize={{ base: "3xl", md: "4xl" }} textColor={"blackAlpha.800"}>
+          Welcome To
+        </Heading>
+        <Heading textColor={"orange.400"} fontSize={{ base: "3xl", md: "4xl" }}>
+          <Typewriter words={["Kakde Group Of Industries"]} cursor={true} cursorBlinking={true} cursorColor="gray" />
+        </Heading>
+        <Text
+          maxW={{ base: "90%", md: "50%" }}
+          textAlign={"justify"}
+          mt={{ base: 5, md: 10 }}
+          ml={{ base: "0", md: "5" }}
+          fontSize={{ base: "md", md: "xl" }}
+          bg={"transparent"}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nisi aliquam fugiat amet? Corrupti, earum nemo expedita
+          voluptatem culpa enim voluptate asperiores deleniti accusamus assumenda officia sunt labore, quas nihil.
+        </Text>
+      </Box>
+
+      {/* Circle Parallax Effect */}
+      <Box
+        position={"fixed"}
+        h={"300px"}
+        w={"300px"}
+        border={"3px solid orange"}
+        opacity={0.6}
+        left={"65%"}
+        bottom={"15%"}
+        borderRadius={"50%"}
+        zIndex={"1"} /* Ensures circle is behind the text */
+      >
+        <MouseParallax>
+          <Box
+            position={"absolute"}
+            h={"250px"}
+            w={"250px"}
+            border={"3px solid orange"}
+            left={"40%"}
+            borderRadius={"50%"}
+            opacity={0.4}
+          ></Box>
+        </MouseParallax>
+      </Box>
+    </Box>
+  );
+}

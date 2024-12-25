@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Wrapper from "./components/wrapper";
+import './index.css';
+import Loading from './components/Loader';
 
 function App() {
+  // Set up a state to handle loading
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate a loading state and hide after 3 seconds (you can modify this for actual data loading)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide the loader after 3 seconds
+    }, 3000); // 3 seconds of loading time
+
+    // Cleanup the timer
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isLoading ? <Loading /> : <Wrapper />}
+    </>
   );
 }
 
