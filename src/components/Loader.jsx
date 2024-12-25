@@ -1,7 +1,6 @@
 import React from "react";
-import { Box, css } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";  // Import keyframes from @emotion/react
-import { FaBold } from "react-icons/fa";
 import { GiElectric } from "react-icons/gi";
 
 // Define the spinning animations

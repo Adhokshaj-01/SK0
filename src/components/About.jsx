@@ -9,7 +9,7 @@ export default function About() {
   const imageControls = useAnimation();
 
   // Set up refs and inView observers for each animated element
-  const { ref: headingRef, inView: headingInView } = useInView({
+  const {  inView: headingInView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
@@ -17,7 +17,7 @@ export default function About() {
     triggerOnce: false,
     threshold: 0.1,
   });
-  const { ref: imageRef, inView: imageInView } = useInView({
+  const {  inView: imageInView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });

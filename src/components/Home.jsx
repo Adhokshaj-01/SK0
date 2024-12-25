@@ -1,11 +1,9 @@
-import { Box, CloseButton, Heading, HStack, Icon, IconButton, Image, StatDownArrow, Text, VStack } from "@chakra-ui/react";
+import { Box,  Heading, HStack, Icon, IconButton, Image, StatDownArrow, Text, VStack } from "@chakra-ui/react";
 import logo from "../utlis/logo.png";
 import { Typewriter } from "react-simple-typewriter";
 import { CiMenuFries } from "react-icons/ci";
-import { MouseParallax } from "react-just-parallax";
 import { useState } from "react";
 import { GiElectricalCrescent } from "react-icons/gi";
-import { GiElectric } from "react-icons/gi";
 export default function Home({ aboutRef, networkRef, careersRef, contactRef,serviceref , galleryRef }) {
   
   const [height , setHeight] = useState('0');
@@ -118,11 +116,11 @@ export default function Home({ aboutRef, networkRef, careersRef, contactRef,serv
       </Box>
      
       {/* Hero Section Content */}
-      <Box p={{lg:14,md:12,base:8}} pos={"relative"} zIndex={"10"} /* Ensures text appears in front of the circle */>
-        <Heading fontSize={{ base: "3xl", md: "3xl" }} textColor={"blackAlpha.800"} textAlign={{base:'center',md:'left'}}>
+      <Box p={{lg:14,md:12,base:8}} pos={"relative"} zIndex={"10"}>
+        <Heading fontSize={{ base: "4xl", md: "3xl" }} textColor={"blackAlpha.800"} textAlign={{base:'center',md:'left'}}>
           Welcome To
         </Heading>
-        <Heading textColor={"orange.400"} fontSize={{ base: "2xl", md: "4xl" }} textAlign={{base:'center',md:'left'}}>
+        <Heading textColor={"orange.400"} fontSize={{ base: "5xl", md: "4xl" }} textAlign={{base:'center',md:'left'}} >
           <Typewriter words={["S.K ELECTRO ENGINEERING & COMPANY"]} cursor={true} cursorBlinking={true} cursorColor="gray" />
         </Heading>
         <Text

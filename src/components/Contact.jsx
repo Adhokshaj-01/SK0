@@ -1,34 +1,17 @@
 import {
   Box,
   Button,
-  Input,
   Flex,
   Text,
-  UnorderedList,
-  ListItem,
-  FormControl,
-  FormLabel,
   VStack,
-  Image,
   HStack,
-  Center,
   Divider,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import logo from "../utlis/logo.png";
+import React from "react";
 import { CiLocationOn, CiMail, CiPhone } from "react-icons/ci";
 import Footer from "./Footer";
 
 export default function Contact() {
-  const [email, setEmail] = useState("");
-
-  const handleEmailChange = (e) => setEmail(e.target.value);
-
-  const handleEmailSubmit = () => {
-    // handle email submit (e.g., send to backend, validate, etc.)
-    alert(`Email submitted: ${email}`);
-  };
-
   return (
     <Box
       height={{ md: "fit-content", base: "fit-content", lg: "100dvh" }}

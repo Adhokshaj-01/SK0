@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Heading,
-  Tooltip,
   Grid,
   GridItem,
   Center,
@@ -17,11 +16,9 @@ import {
   FaPlug,
 } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
 export default function Services() {
   // Service data array with dummy services and icons
-  const textControls = useAnimation();
-  const { ref: textRef, inView: textInView } = useInView({
+  const { } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
@@ -57,7 +54,7 @@ export default function Services() {
   ];
 
   // Scroll-in view detection for animations
-  const { ref: titleRef, inView: titleInView } = useInView({
+  const { ref: titleRef } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
