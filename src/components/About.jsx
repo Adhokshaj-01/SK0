@@ -34,14 +34,14 @@ export default function About() {
   useEffect(() => {
     if (textInView) {
       textControls.start({
-        opacity: 0,
         opacity: 1,
         transition: { duration: 1 },
       });
     } else {
-      textControls.start({ opacity: 1, opacity: 0 });
+      textControls.start({ opacity: 0 });
     }
   }, [textControls, textInView]);
+  
 
   useEffect(() => {
     if (imageInView) {

@@ -26,11 +26,7 @@ export default function Network() {
     
   ];
 
-  // Hook for detecting scroll-in view for the title
-  const { } = useInView({
-    triggerOnce: true, // Trigger once when the element enters the viewport
-    threshold: 0.2, // Trigger when 20% of the element is in the viewport
-  });
+ 
 
   // Hook for detecting scroll-in view for the grid
   const { ref: gridRef, inView: gridInView } = useInView({

@@ -18,10 +18,6 @@ import {
 import { useInView } from "react-intersection-observer";
 export default function Services() {
   // Service data array with dummy services and icons
-  const { } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
   // 
   const serviceData = [
     {
