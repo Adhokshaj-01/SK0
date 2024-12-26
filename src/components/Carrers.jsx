@@ -4,29 +4,22 @@ import {
   Text,
   Button,
   Container,
-  SimpleGrid,
   Center,
+  Avatar,
 } from "@chakra-ui/react";
-
+import logo from "../utlis/logo.png";
+import { IoMdMail } from "react-icons/io";
 export default function Careers() {
-  const jobs = [
-    {
-      title: "Software Engineer",
-      description:
-        "We are looking for a highly skilled software engineer to join our team. You'll work on exciting projects and be a part of our growth.",
-    },
-    {
-      title: "Product Manager",
-      description:
-        "As a Product Manager, you will be responsible for driving product development and ensuring a smooth user experience.",
-    },
-    {
-      title: "UX/UI Designer",
-      description:
-        "We're looking for a creative and detail-oriented UX/UI Designer to help design intuitive and beautiful digital products.",
-    },
-  ];
+  const sendMail = () => {
+    const recipient = "skelectroeng@rediffmail.com"; 
+    const subject = "Job Application/Inquire: [Your Name] "; 
 
+    // Create the mailto link
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}`;
+
+    // Open the mailto link in the user's default mail client
+    window.location.href = mailtoLink;
+  };
   return (
     <Box
       height={{ md: "fit-content", base: "fit-content", lg: "100dvh" }}
@@ -67,42 +60,40 @@ export default function Careers() {
           our open positions below and apply today!
         </Text>
 
-        {/* Job Listings */}
-        <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 2 }}
-          spacing={8}
-          maxW={{ base: "100%", md: "70%" }}
+        {/* Job Card */}
+        <Box
+          p={6}
+          borderWidth={1}
+          borderRadius="md"
+          boxShadow="lg"
+          bg="white"
           zIndex={"109090"}
+          maxW={{ base: "100%", md: "90%", lg: "50%" }}
+          mx={{ base: "auto", md: "auto", lg: 0 }}
+          mt={{base:0,md:25,lg:25}}
         >
-          {/* Map through jobs array */}
-          {jobs.map((job, index) => (
-            <Box
-              key={index}
-              p={6}
-              borderWidth={1}
-              borderRadius="md"
-              boxShadow="lg"
-              bg="white"
-              zIndex={"1000000"}
-              w={"fit-content"}
-            >
-              <Heading size="md" mb={2}>
-                {job.title}
-              </Heading>
-              <Text mb={4} fontSize={{ base: "small" }}>
-                {job.description}
-              </Text>
-              <Button
-                colorScheme="black"
-                size="sm"
-                width="full"
-                variant={"outline"}
-              >
-                Apply Now
-              </Button>
-            </Box>
-          ))}
-        </SimpleGrid>
+          <Heading size="md" mb={2} textAlign={{ base: "center", lg: "left" }} display={'flex'} justifyContent={'space-between'}>
+          <Avatar src={logo} size={'sm'} mx={{base:0,md:5,lg:5}}/>
+            Kickstart Your Career with S.K. Electro Engineering & Company
+          </Heading>
+          <Text m={7} fontSize={{ base: "md" }} textAlign={{ base: "center", lg: "left" }}>
+            Click the email button below to attach your resume and CV. Stay updated on
+            new job openings and exciting opportunities by clicking for more details.
+          </Text>
+          <Button
+            bg={'#121212'}
+            color={'white'}
+            _hover={{bg:'#121212'}}
+            size="sm"
+            width="full"
+            variant={'solid'}
+            p={2}
+            onClick={sendMail}
+            
+          >
+            Apply Now &nbsp; <IoMdMail />
+          </Button>
+        </Box>
       </Container>
     </Box>
   );
