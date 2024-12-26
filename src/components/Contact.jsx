@@ -74,8 +74,8 @@ export default function Contact() {
 
           >
             {" "}
-            <a href="phone:+91 1122334455" style={{ display: "flex" }}>
-              <CiPhone /> &nbsp;+91 1122334455
+            <a href="phone:+91 9975564874" style={{ display: "flex" }}>
+              <CiPhone /> &nbsp;+91 9975564874
             </a>
           </Button>
           <Button
