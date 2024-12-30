@@ -81,14 +81,15 @@ export default function About() {
         p={{ base: 5, md: 20 }}
         m={{ base: 2, md: 8 }}
         gap={5}
+        
       >
-        <Box flex={"50%"} justifyItems={"center"}>
+        <Box flex={"50%"} justifyItems={"center"} >
           <Image
             src={img}
             boxSize={{ base: "fit-content", md: "fit-content" }}
             borderRadius={"md"}
-            mr={{ base: 0, md: 4 }}
-            mt={{ base: 7, md: 0 }}
+            mr={{ base: 0, md: 7 }}
+            mt={{ base: 7, md: '22%' }}
           />
         </Box>
         <motion.div
@@ -116,17 +117,6 @@ export default function About() {
             >
               ABOUT US
             </Heading>
-            {/* We are a trusted Government-approved Electrical Contractor,
-            specializing in Erection, Commissioning, Testing, LT/HT
-            Installation, Internal Electrification, Cabling, and Paneling. With
-            expertise in delivering high-quality electrical solutions, we
-            proudly serve clients in Nagpur and across multiple states. Our team
-            of skilled professionals is dedicated to ensuring safe, efficient,
-            and cost-effective solutions tailored to your needs. From industrial
-            and commercial projects to residential installations, we bring
-            precision and reliability to every task. With a commitment to
-            excellence and timely project completion, we aim to be your go-to
-            partner for all electrical contracting needs. */}
             Established on November 3, 1995, SK Group is a trusted,
             Government-approved Electrical Contractor with nearly three decades
             of expertise. We specialize in Erection, Commissioning, Testing,

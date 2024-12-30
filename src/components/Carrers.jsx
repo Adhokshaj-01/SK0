@@ -6,9 +6,12 @@ import {
   Container,
   Center,
   Avatar,
+  Image,
+  Divider,
 } from "@chakra-ui/react";
 import logo from "../utlis/logo.png";
 import { IoMdMail } from "react-icons/io";
+import Cimage from '../utlis/career.svg'
 export default function Careers() {
   const sendMail = () => {
     const recipient = "skelectroeng@rediffmail.com"; 
@@ -65,18 +68,29 @@ export default function Careers() {
           p={6}
           borderWidth={1}
           borderRadius="md"
-          boxShadow="lg"
-          bg="white"
-          zIndex={"109090"}
+          boxShadow="0px 0px 2px 1px rgba(255,171,46,1)"
+          // bg="black"
+          background={'white'}
+          zIndex={"109090909"}
           maxW={{ base: "100%", md: "90%", lg: "50%" }}
-          mx={{ base: "auto", md: "auto", lg: 0 }}
+          // mx={{ base: "auto", md: "auto", lg: 0 }}
+          mx={'auto'}
           mt={{base:0,md:25,lg:25}}
         >
           <Heading size="md" mb={2} textAlign={{ base: "center", lg: "left" }} display={'flex'} justifyContent={'space-between'}>
           <Avatar src={logo} size={'sm'} mx={{base:0,md:5,lg:5}}/>
             Kickstart Your Career with S.K. Electro Engineering & Company
           </Heading>
-          <Text m={7} fontSize={{ base: "md" }} textAlign={{ base: "center", lg: "left" }}>
+          <Divider border={'1px solid rgb(253, 215, 138)'} top={2} pos={'relative'}  />
+          <Image 
+  src={Cimage} 
+  boxSize={{ base: '150px', md: '250px', lg: '270px' }} 
+  mx="auto" 
+  my={4} 
+  display="block"
+  alt="Img_Resume_"
+/>
+          <Text m={7} fontSize={{ base: "sm" , lg:'md',md:'md'  }} textAlign={{ base: "center", lg: "left" }}>
             Click the email button below to attach your resume and CV. Stay updated on
             new job openings and exciting opportunities by clicking for more details.
           </Text>

@@ -10,7 +10,7 @@ export default function Footer() {
             fontSize="small"
             pt={2}
           >
-            <Text  opacity={0.6}>
+            <Text  opacity={1} color={'orange.900'}>
               {" "}
               &copy;2024 | All right reserved{" "}
             </Text>
